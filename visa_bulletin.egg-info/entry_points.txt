@@ -1,0 +1,2 @@
+[console_scripts]
+visa-bulletin = visa_bulletin.__main__:main

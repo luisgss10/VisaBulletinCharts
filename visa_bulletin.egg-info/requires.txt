@@ -1,0 +1,10 @@
+requests
+beautifulsoup4
+python-dateutil
+pandas
+matplotlib
+
+[dev]
+pytest
+pytest-cov
+responses

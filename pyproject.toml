@@ -1,0 +1,33 @@
+[build-system]
+requires      = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name            = "visa-bulletin"
+version         = "0.1.0"
+description     = "EB-3 Mexico visa bulletin cutoff date tracker"
+requires-python = ">=3.11"
+dependencies    = [
+    "requests",
+    "beautifulsoup4",
+    "python-dateutil",
+    "pandas",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "responses",      # mock HTTP in tests
+]
+
+[project.scripts]
+visa-bulletin = "visa_bulletin.__main__:main"
+
+[tool.pytest.ini_options]
+testpaths    = ["tests"]
+addopts      = "-v --tb=short"
+
+[tool.setuptools.packages.find]
+where = ["."]
