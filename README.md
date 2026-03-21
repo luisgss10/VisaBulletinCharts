@@ -36,16 +36,6 @@ python main.py --start 01/2016 --end 12/2025 --priority-date 31/05/2023
 the State Dept index page and sends an email when a genuinely new bulletin
 appears (ignores "Coming Soon" placeholders).
 
-**Run manually:**
-
-```bash
-SMTP_HOST=smtp.gmail.com \
-SMTP_PORT=587 \
-SMTP_USER=you@gmail.com \
-SMTP_PASSWORD="your-app-password" \
-NOTIFY_EMAIL=recipient@example.com \
-python -m visa_bulletin.monitor
-```
 
 **How state is persisted:** the last detected bulletin is saved to
 `last_bulletin.json` at the repo root. The GitHub Actions workflow commits
