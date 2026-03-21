@@ -36,7 +36,7 @@ INDEX_URL = (
 
 # Matches: /visa-bulletin/2026/visa-bulletin-for-april-2026.html
 BULLETIN_PATH_RE = re.compile(
-    r"/visa-bulletin/\d{4}/visa-bulletin-for-[a-z]+-\d{4}\.html$",
+    r"/visa-bulletin-for-[a-z]+-\d{4}\.html$",
     re.IGNORECASE,
 )
 
@@ -82,7 +82,9 @@ def _extract_upcoming(html: bytes) -> dict[str, str] | None:
     if link is None:
         return None
 
-    title = link.get_text(strip=True)
+    # Month and year may be in separate child elements (e.g. <br> between them)
+    parts = [s.strip() for s in link.strings if s.strip()]
+    title = " ".join(parts)
     if not BULLETIN_TITLE_RE.match(title):
         return None
 
