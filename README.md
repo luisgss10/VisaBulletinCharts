@@ -53,8 +53,8 @@ this file back automatically after each new detection.
 
 ### GitHub Actions — automated monitoring
 
-The workflow at `.github/workflows/monitor.yml` runs every 4 hours and
-can also be triggered manually from the Actions tab.
+The workflow at `.github/workflows/monitor.yml` runs daily at 2 pm PST
+and can also be triggered manually from the Actions tab.
 
 **Required repository secrets** (Settings → Secrets and variables → Actions):
 

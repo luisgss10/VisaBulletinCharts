@@ -2,8 +2,8 @@ name: Visa Bulletin Monitor
 
 on:
   schedule:
-    # Runs every 4 hours
-    - cron: "0 */4 * * *"
+    # Runs daily at 2 pm PST (22:00 UTC)
+    - cron: "0 22 * * *"
   workflow_dispatch: # allow manual trigger
 
 permissions:
